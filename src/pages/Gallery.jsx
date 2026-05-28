@@ -51,7 +51,7 @@ export default function Gallery() {
         <section className="section-pad-lg">
           <div className="container">
             {/* Filter Tabs */}
-            <div className="gallery-filter-tabs reveal">
+            <div className="gallery-filter-tabs">
               {galleryCategories.map(cat => (
                 <button
                   key={cat.id}
@@ -68,7 +68,7 @@ export default function Gallery() {
               {visibleSections.map(section => (
                 <div
                   key={section.id}
-                  className="gallery-section-group reveal"
+                  className="gallery-section-group"
                   data-category={section.category}
                   style={{ marginBottom: '64px' }}
                 >
@@ -76,7 +76,7 @@ export default function Gallery() {
                   <div className="gallery-masonry">
                     {section.items.map(item => (
                       <div
-                        key={item.id}
+                        key={`${section.category}-${item.id}`}
                         className="gallery-masonry-item"
                         style={{ cursor: 'zoom-in' }}
                         tabIndex="0"
@@ -88,7 +88,16 @@ export default function Gallery() {
                           }
                         }}
                       >
-                        <img src={item.src} alt={item.alt} loading="lazy" />
+                        <img
+                          src={item.src}
+                          alt={item.alt}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            display: "block"
+                          }}
+                        />
                         <div className="gallery-masonry-item-overlay">&#43;</div>
                       </div>
                     ))}
@@ -97,7 +106,7 @@ export default function Gallery() {
               ))}
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
+            <div style={{ textAlign: 'center', marginTop: '48px' }} className="">
               <Button to="/contact" variant="gold" size="lg">
                 Plan Your Event →
               </Button>
