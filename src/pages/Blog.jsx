@@ -12,12 +12,19 @@ export default function Blog() {
 
   // Filter posts based on active category & search query
   const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const matchesCategory =
+    activeCategory === 'all' ||
+    (post.category &&
+      post.category.toLowerCase() === activeCategory.toLowerCase());
+
+  const matchesSearch =
+    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+
+  return matchesCategory && matchesSearch;
+});
+
+console.log(filteredPosts);
 
   return (
     <>
