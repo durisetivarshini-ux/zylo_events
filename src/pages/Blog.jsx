@@ -61,7 +61,7 @@ export default function Blog() {
             />
 
             {/* Category filter tabs */}
-            <div className="gallery-filter-tabs reveal" style={{ marginBottom: '32px' }}>
+            <div className="gallery-filter-tabs" style={{ marginBottom: '32px' }}>
               {blogCategories.map((cat) => (
                 <button
                   key={cat.id}
@@ -96,7 +96,7 @@ export default function Blog() {
               <div className="blog-posts-column">
                 {filteredPosts.length === 0 ? (
                   <div
-                    className="reveal"
+                    className=""
                     style={{
                       background: '#ffffff',
                       borderRadius: '16px',
@@ -159,13 +159,15 @@ export default function Blog() {
                           style={{ overflow: 'hidden', height: '200px', position: 'relative' }}
                         >
                           <img
+                            key={`${activeCategory}-${post.id}`}
                             src={post.image}
                             alt={post.title}
                             style={{
                               width: '100%',
                               height: '100%',
                               objectFit: 'cover',
-                              transition: 'transform 0.4s ease'
+                              transition: 'transform 0.4s ease',
+                              display: 'block'
                             }}
                             className="blog-card-img"
                           />
@@ -233,7 +235,7 @@ export default function Blog() {
               </div>
 
               {/* Right Column: Sidebar */}
-              <aside className="blog-sidebar-column reveal" style={{ display: 'grid', gap: '32px' }}>
+              <aside className="blog-sidebar-column" style={{ display: 'grid', gap: '32px' }}>
                 {/* Search widget */}
                 <div
                   className="sidebar-widget"

@@ -36,7 +36,55 @@ const teamMembers = [
     bio: 'The heartbeat of our client relations, Neha manages key corporate accounts for over 15 Fortune 500 brands, translating corporate objectives into flawless execution plans.',
     traits: ['Client Success', 'Enterprise Lead'],
     linkedin: '#'
-  }
+  },
+  {
+    name: "Vidhi",
+    role: "Client Service Manager",
+    bio:
+      "Introducing our event client service manager extraordinaire! A multitasking marvel with a knack for show flow and a memory that never fails. She's best at handling guests and clients, making every event a breeze!",
+    traits: ['Brand Strategy', 'Experiential Design'],
+    linkedin: '#'
+    },
+  {
+    name: "Gowtham",
+    role: "Managing Director",
+    bio:
+      "Founder with entrepreneurial spirit and passion for creating experiences for clients. Sorcerer when it comes to planning and executing events.",
+  traits: ['Brand Strategy', 'Experiential Design'],
+    linkedin: '#'
+  },
+  {
+    name: "Snehal",
+    role: "Managing Director",
+    bio:
+      "Co-Founder and Event Designer! NO one as creative as her. She experiments with innovations. Works closely with our vendor partners and to deliver events with absolute perfection.",
+      traits: ['Creative Direction', 'Visual Storytelling'],
+    linkedin: '#'
+  },
+  {
+    name: "Naveen",
+    role: "Logistics Manager",
+    bio:
+      "Multi tasker and executes every job with utmost dedication. A person with big heart and helps people around him in anyway possible in all departments.",
+    traits: ['Logistics', 'Operations'],
+    linkedin: '#'
+  },
+  {
+    name: "Sadhana",
+    role: "Event Stylist",
+    bio:
+      "Organized and a person with eye for detail. An expert when it comes to executing event installations, and dealing with workforce from multiple departments.",
+    traits: ['Event Styling', 'Organization'],
+    linkedin: '#'
+  },
+  {
+    name: "Prashant",
+    role: "Event 3D Designer", 
+   bio: "An event 3D designer celebrated for his meticulous attention to detail and unwavering commitment to creativity and perfection. With a keen eye for aesthtics and a passion for precision, he crafts designs that captivate and inspire.",
+    traits: ['3D Design', 'Creativity'],
+    linkedin: '#'
+  },
+
 ];
 
 const awards = [

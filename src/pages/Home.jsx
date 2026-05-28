@@ -6,7 +6,6 @@ import PlanningExpertise from '../components/home/PlanningExpertise';
 import AboutSection from '../components/home/AboutSection';
 import ServicesSummary from '../components/home/ServicesSummary';
 import WhyChooseUs from '../components/home/WhyChooseUs';
-import TeamSection from '../components/home/TeamSection';
 import Testimonials from '../components/home/Testimonials';
 import SubsidiaryProduction from '../components/home/SubsidiaryProduction';
 import Button from '../components/shared/Button';
@@ -221,9 +220,7 @@ export default function Home() {
         {/* 11. CLIENT TESTIMONIALS */}
         <Testimonials />
 
-        {/* 12. TEAM SECTION */}
-        <TeamSection />
-
+        
         {/* 13. CONTACT SECTION */}
         <section className="contact-section section-pad-lg" id="contact" aria-labelledby="contact-title">
           <div className="container contact-grid">
