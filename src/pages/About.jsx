@@ -1,91 +1,93 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import SEO from '../components/shared/SEO';
 import SectionHeader from '../components/shared/SectionHeader';
 import Button from '../components/shared/Button';
 
-const teamMembers = [
-  {
-    name: 'Chaitanya Kulkarni',
-    role: 'Co-Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-    bio: 'A visionary corporate strategist and experiential pioneer with 18+ years of legacy. Former Director of Operations for premium global events groups, Chaitanya co-founded Zylo in 2011 to bring scale and absolute precision to corporate events.',
-    traits: ['Corporate Strategy', 'Scale & Precision'],
-    linkedin: '#'
-  },
-  {
-    name: 'Chandrika Ganji',
-    role: 'Co-Founder & Creative Director',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-    bio: 'A highly acclaimed spatial designer and luxury brand architect. Chandrika transforms physical environments into breathtaking, immersive sensory brand spaces, leading Zylo\'s experiential creative wing.',
-    traits: ['Spatial Architect', 'Luxury Design'],
-    linkedin: '#'
-  },
-  {
-    name: 'Arun Mehta',
-    role: 'Operations Head',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    bio: 'Logistics genius and master of AV production who ensures that Zylo\'s complex staging and mega-scale corporate logistics are executed with flawless precision.',
-    traits: ['AV Production', 'Logistics Master'],
-    linkedin: '#'
-  },
-  {
-    name: 'Neha Patel',
-    role: 'Client Relations',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
-    bio: 'The heartbeat of our client relations, Neha manages key corporate accounts for over 15 Fortune 500 brands, translating corporate objectives into flawless execution plans.',
-    traits: ['Client Success', 'Enterprise Lead'],
-    linkedin: '#'
-  },
-  {
-    name: "Vidhi",
-    role: "Client Service Manager",
-    bio:
-      "Introducing our event client service manager extraordinaire! A multitasking marvel with a knack for show flow and a memory that never fails. She's best at handling guests and clients, making every event a breeze!",
-    traits: ['Brand Strategy', 'Experiential Design'],
-    linkedin: '#'
-    },
-  {
-    name: "Gowtham",
-    role: "Managing Director",
-    bio:
-      "Founder with entrepreneurial spirit and passion for creating experiences for clients. Sorcerer when it comes to planning and executing events.",
-  traits: ['Brand Strategy', 'Experiential Design'],
-    linkedin: '#'
-  },
-  {
-    name: "Snehal",
-    role: "Managing Director",
-    bio:
-      "Co-Founder and Event Designer! NO one as creative as her. She experiments with innovations. Works closely with our vendor partners and to deliver events with absolute perfection.",
-      traits: ['Creative Direction', 'Visual Storytelling'],
-    linkedin: '#'
-  },
-  {
-    name: "Naveen",
-    role: "Logistics Manager",
-    bio:
-      "Multi tasker and executes every job with utmost dedication. A person with big heart and helps people around him in anyway possible in all departments.",
-    traits: ['Logistics', 'Operations'],
-    linkedin: '#'
-  },
-  {
-    name: "Sadhana",
-    role: "Event Stylist",
-    bio:
-      "Organized and a person with eye for detail. An expert when it comes to executing event installations, and dealing with workforce from multiple departments.",
-    traits: ['Event Styling', 'Organization'],
-    linkedin: '#'
-  },
-  {
-    name: "Prashant",
-    role: "Event 3D Designer", 
-   bio: "An event 3D designer celebrated for his meticulous attention to detail and unwavering commitment to creativity and perfection. With a keen eye for aesthtics and a passion for precision, he crafts designs that captivate and inspire.",
-    traits: ['3D Design', 'Creativity'],
-    linkedin: '#'
-  },
+// const teamMembers = [
+//   {
+//     name: 'Chaitanya Kulkarni',
+//     role: 'Co-Founder & CEO',
+//     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+//     bio: 'A visionary corporate strategist and experiential pioneer with 18+ years of legacy. Former Director of Operations for premium global events groups, Chaitanya co-founded Zylo in 2011 to bring scale and absolute precision to corporate events.',
+//     traits: ['Corporate Strategy', 'Scale & Precision'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: 'Chandrika Ganji',
+//     role: 'Co-Founder & Creative Director',
+//     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+//     bio: 'A highly acclaimed spatial designer and luxury brand architect. Chandrika transforms physical environments into breathtaking, immersive sensory brand spaces, leading Zylo\'s experiential creative wing.',
+//     traits: ['Spatial Architect', 'Luxury Design'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: 'Arun Mehta',
+//     role: 'Operations Head',
+//     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+//     bio: 'Logistics genius and master of AV production who ensures that Zylo\'s complex staging and mega-scale corporate logistics are executed with flawless precision.',
+//     traits: ['AV Production', 'Logistics Master'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: 'Neha Patel',
+//     role: 'Client Relations',
+//     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+//     bio: 'The heartbeat of our client relations, Neha manages key corporate accounts for over 15 Fortune 500 brands, translating corporate objectives into flawless execution plans.',
+//     traits: ['Client Success', 'Enterprise Lead'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: "Vidhi",
+//     role: "Client Service Manager",
+//     bio:
+//       "Introducing our event client service manager extraordinaire! A multitasking marvel with a knack for show flow and a memory that never fails. She's best at handling guests and clients, making every event a breeze!",
+//     traits: ['Brand Strategy', 'Experiential Design'],
+//     linkedin: '#'
+//     },
+//   {
+//     name: "Gowtham",
+//     role: "Managing Director",
+//     bio:
+//       "Founder with entrepreneurial spirit and passion for creating experiences for clients. Sorcerer when it comes to planning and executing events.",
+//   traits: ['Brand Strategy', 'Experiential Design'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: "Snehal",
+//     role: "Managing Director",
+//     bio:
+//       "Co-Founder and Event Designer! NO one as creative as her. She experiments with innovations. Works closely with our vendor partners and to deliver events with absolute perfection.",
+//       traits: ['Creative Direction', 'Visual Storytelling'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: "Naveen",
+//     role: "Logistics Manager",
+//     bio:
+//       "Multi tasker and executes every job with utmost dedication. A person with big heart and helps people around him in anyway possible in all departments.",
+//     traits: ['Logistics', 'Operations'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: "Sadhana",
+//     role: "Event Stylist",
+//     bio:
+//       "Organized and a person with eye for detail. An expert when it comes to executing event installations, and dealing with workforce from multiple departments.",
+//     traits: ['Event Styling', 'Organization'],
+//     linkedin: '#'
+//   },
+//   {
+//     name: "Prashant",
+//     role: "Event 3D Designer", 
+//    bio: "An event 3D designer celebrated for his meticulous attention to detail and unwavering commitment to creativity and perfection. With a keen eye for aesthtics and a passion for precision, he crafts designs that captivate and inspire.",
+//     traits: ['3D Design', 'Creativity'],
+//     linkedin: '#'
+//   },
 
-];
+// ];
 
 const awards = [
   {
@@ -116,6 +118,22 @@ const awards = [
 ];
 
 export default function About() {
+    const [teamMembers, setTeamMembers] = useState([]);
+
+  useEffect(() => {
+    fetchEmployees();
+  }, []);
+
+  const fetchEmployees = async () => {
+    const data = await getDocs(collection(db, 'employees'));
+
+    setTeamMembers(
+      data.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      }))
+    );
+  };
   return (
     <>
       <SEO
@@ -299,7 +317,10 @@ export default function About() {
                     <div className="avatar-ring"></div>
                     <div className="avatar-image-wrapper">
                       <img
-                        src={member.image}
+                        src={
+                              member.image ||
+                              'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80'
+                            }
                         alt={`${member.name}, ${member.role}`}
                         loading="lazy"
                         className="avatar-image"
@@ -308,14 +329,12 @@ export default function About() {
                   </div>
                   <h3 className="leader-name">{member.name}</h3>
                   <span className="leader-role">{member.role}</span>
-                  <div className="leader-traits">
-                    {member.traits.map((trait, tIdx) => (
-                      <span key={tIdx} className="trait-tag">
-                        {trait}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="leader-bio">{member.bio}</p>
+                 <div className="leader-traits">
+                  <span className="trait-tag">
+                    {member.role}
+                  </span>
+                 </div>
+                  <p className="leader-bio">{member.description}</p>
                   <div className="leader-socials">
                     <a
                       href={member.linkedin}
