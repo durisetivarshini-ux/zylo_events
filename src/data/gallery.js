@@ -77,7 +77,13 @@ export const galleryItems = [
     category: 'corporate',
     src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
     alt: 'Corporate retreat and outdoor leadership team building'
-  }
+  },
+  {
+  id: 13,
+  category: 'corporate',
+  src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+  alt: 'Leadership summit with keynote speaker and executive audience'
+}
 ];
 
 export const gallerySections = [

@@ -4,23 +4,20 @@ export const navigationLinks = [
   {
     label: 'Corporate Events',
     path: '/corporate-events',
-    dropdown: [
-      { label: 'Conferences & Seminars', path: '/corporate-events#conferences' },
-      { label: 'Product Launches', path: '/corporate-events#product-launches' },
-      { label: 'Award Ceremonies', path: '/corporate-events#awards' },
-      { label: 'Corporate Retreats', path: '/corporate-events#retreats' },
-      { label: 'Trade Shows & Expos', path: '/corporate-events#trade-shows' }
-    ]
+   dropdown: [
+  { label: 'Conferences & Seminars', path: '/corporate-events#conferences' },
+  { label: 'Product Launches', path: '/corporate-events#product-launches' },
+  { label: 'Leadership Summits', path: '/corporate-events#summits' },
+  { label: 'Award Ceremonies', path: '/corporate-events#awards' },
+  { label: 'Corporate Retreats', path: '/corporate-events#retreats' },
+  { label: 'Trade Shows & Expos', path: '/corporate-events#trade-shows' }
+]
   },
   {
-    label: 'Gallery',
-    path: '/gallery',
-    dropdown: [
-      { label: 'Corporate Events', path: '/gallery#corporate' },
-      { label: 'Exhibitions', path: '/gallery#exhibitions' }
-    ]
-  },
-  { label: 'Blog', path: '/blog' },
+  label: 'Gallery',
+  path: '/gallery'
+},  
+{ label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' }
 ];
 

@@ -3,18 +3,14 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/shared/SEO';
 import SectionHeader from '../components/shared/SectionHeader';
 import Button from '../components/shared/Button';
-import { galleryCategories, gallerySections, galleryItems } from '../data/gallery';
-import clsx from 'clsx';
+import { galleryItems } from '../data/gallery';
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [activeImg, setActiveImg] = useState(null);
 
   // If a category tab is selected, filter matching sections
-  const visibleSections = gallerySections.filter(
-    section => activeFilter === 'all' || section.category === activeFilter
-  );
-
+ 
   return (
     <>
       <SEO
@@ -51,60 +47,41 @@ export default function Gallery() {
         <section className="section-pad-lg">
           <div className="container">
             {/* Filter Tabs */}
-            <div className="gallery-filter-tabs">
-              {galleryCategories.map(cat => (
-                <button
-                  key={cat.id}
-                  className={clsx('filter-tab', { active: activeFilter === cat.id })}
-                  onClick={() => setActiveFilter(cat.id)}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
+            
 
             {/* Gallery group sections */}
-            <div className="gallery-groups-wrapper">
-              {visibleSections.map(section => (
-                <div
-                  key={section.id}
-                  className="gallery-section-group"
-                  data-category={section.category}
-                  style={{ marginBottom: '64px' }}
-                >
-                  <div className="gallery-section-label">{section.label}</div>
-                  <div className="gallery-masonry">
-                    {section.items.map(item => (
-                      <div
-                        key={`${section.category}-${item.id}`}
-                        className="gallery-masonry-item"
-                        style={{ cursor: 'zoom-in' }}
-                        tabIndex="0"
-                        onClick={() => setActiveImg(item)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            setActiveImg(item);
-                          }
-                        }}
-                      >
-                        <img
-                          src={item.src}
-                          alt={item.alt}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            display: "block"
-                          }}
-                        />
-                        <div className="gallery-masonry-item-overlay">&#43;</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className="gallery-masonry">
+  {galleryItems.map(item => (
+    <div
+      key={item.id}
+      className="gallery-masonry-item"
+      style={{ cursor: 'zoom-in' }}
+      tabIndex="0"
+      onClick={() => setActiveImg(item)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActiveImg(item);
+        }
+      }}
+    >
+      <img
+        src={item.src}
+        alt={item.alt}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          display: 'block'
+        }}
+      />
+
+      <div className="gallery-masonry-item-overlay">
+        +
+      </div>
+    </div>
+  ))}
+</div>
 
             <div style={{ textAlign: 'center', marginTop: '48px' }} className="">
               <Button to="/contact" variant="gold" size="lg">

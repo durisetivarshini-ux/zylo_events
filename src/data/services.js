@@ -28,8 +28,22 @@ export const servicesData = [
     ]
   },
   {
+  id: 'summits',
+  num: '03',
+  title: 'Leadership Summits',
+    image: 'https://heathrowbusinesssummit.com/wp-content/uploads/2024/11/1H3A2128-scaled.jpg',
+  description: 'Zylo delivers high-impact leadership summits, dealer summits, partner summits, and executive forums designed to bring together industry leaders, stakeholders, and decision-makers in a premium environment.',
+  extraDescription: 'From speaker management and delegate engagement to branding, staging, and hospitality, we ensure every summit creates meaningful conversations and lasting business relationships.',
+  features: [
+    'Leadership & executive summit planning',
+    'Speaker & panel discussion management',
+    'Delegate registration & engagement',
+    'Premium venue & hospitality management'
+  ]
+},
+  {
     id: 'awards',
-    num: '03',
+    num: '04',
     title: 'Award Ceremonies',
     image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=700&q=80',
     description: 'Recognition events require a particular blend of elegance, precision, and emotion. Zylo\'s award ceremony production team creates prestige-worthy experiences — from red carpet arrivals to trophy presentations — that honour achievement in true grand style.',
@@ -43,7 +57,7 @@ export const servicesData = [
   },
   {
     id: 'retreats',
-    num: '04',
+    num: '05',
     title: 'Corporate Retreats',
     image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=700&q=80',
     description: 'The best teams are built outside the office. Zylo designs and executes corporate retreats that inspire, recharge, and unite your workforce — from luxury hill stations to beachside resorts across India.',
@@ -57,7 +71,7 @@ export const servicesData = [
   },
   {
     id: 'trade-shows',
-    num: '05',
+    num: '06',
     title: 'Trade Shows & Expos',
     image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=700&q=80',
     description: 'Zylo manages large-scale trade shows, B2B expos, and industry exhibitions that attract thousands of buyers, exhibitors, and thought leaders. From floor-plan design and exhibitor management to keynotes and networking events, we handle every aspect.',
@@ -71,7 +85,7 @@ export const servicesData = [
   },
   {
     id: 'team-building',
-    num: '06',
+    num: '08',
     title: 'Team Building Events',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80',
     description: 'Great teams don\'t happen by accident — they\'re built through shared experiences, challenges, and laughter. Zylo\'s team-building programmes range from creative workshops and sporting competitions to culinary challenges and adventure expeditions.',

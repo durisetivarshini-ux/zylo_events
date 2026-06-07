@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import SectionHeader from '../shared/SectionHeader';
 
 const expertiseCards = [
@@ -66,7 +67,7 @@ const expertiseCards = [
     desc: 'Exhibitions that command attention',
     bg: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="1" y="3" width="15" height="13" />
         <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
         <circle cx="5.5" cy="18.5" r="2.5" />
@@ -77,12 +78,22 @@ const expertiseCards = [
 ];
 
 export default function PlanningExpertise() {
+  const navigate = useNavigate();
+
   return (
-    <section className="planning-section section-pad-lg" id="planning" aria-labelledby="planning-title">
+    <section
+      className="planning-section section-pad-lg"
+      id="planning"
+      aria-labelledby="planning-title"
+    >
       <div className="container">
         <SectionHeader
           tag="Our Expertise"
-          title={<>What Are You <span style={{ color: 'var(--brand)' }}>Planning?</span></>}
+          title={
+            <>
+              What Are You <span style={{ color: 'var(--brand)' }}>Planning?</span>
+            </>
+          }
           subtitle="From intimate boardroom sessions to massive trade shows and exhibitions — we specialise in bringing every vision to life across Hyderabad and pan-India."
           id="planning-title"
         />
@@ -93,19 +104,28 @@ export default function PlanningExpertise() {
               key={idx}
               className="planning-card reveal"
               style={{
-                '--card-bg': `linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%), url('${card.bg}')`
+                '--card-bg': `linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%), url('${card.bg}')`,
+                cursor: 'pointer'
               }}
+              onClick={() => navigate('/contact')}
             >
               <div className="planning-card-overlay"></div>
-              <div className="planning-card-icon">{card.icon}</div>
+
+              <div className="planning-card-icon">
+                {card.icon}
+              </div>
+
               <div className="planning-card-body">
                 <h3>{card.title}</h3>
                 <p>{card.desc}</p>
+
+                <span className="planning-cta">
+                  Enquire Now →
+                </span>
               </div>
             </article>
           ))}
         </div>
       </div>
     </section>
-  );
-}
+  );}

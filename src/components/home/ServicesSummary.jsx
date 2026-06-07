@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import SectionHeader from '../shared/SectionHeader';
 
 const corporateServices = [
@@ -14,6 +15,12 @@ const corporateServices = [
     img: 'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=700&q=80',
     bg: 'linear-gradient(160deg, #0d4f8c 0%, #1d6fa4 60%, #082d50 100%)'
   },
+  {
+  title: 'Leadership Summits',
+  desc: 'High-impact leadership summits, executive forums, and industry gatherings designed to inspire collaboration and strategic growth.',
+  img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80',
+  bg: 'linear-gradient(160deg, #1a365d 0%, #2563eb 60%, #0f172a 100%)'
+},
   {
     title: 'Award Ceremonies',
     desc: 'Prestigious, polished celebrations of achievement and excellence — crafted to perfection.',
@@ -56,6 +63,7 @@ const expoServices = [
 ];
 
 export default function ServicesSummary() {
+   const navigate = useNavigate();
   return (
     <section className="services-section section-pad-lg bg-gray" id="services" aria-labelledby="services-title">
       <div className="container">
@@ -75,7 +83,11 @@ export default function ServicesSummary() {
               <article
                 key={idx}
                 className="service-card"
-                style={{ '--svc-bg': service.bg }}
+                style={{
+    '--svc-bg': service.bg,
+    cursor: 'pointer'
+  }}
+  onClick={() => navigate('/contact')}
               >
                 <div
                   className="service-card-img"
@@ -105,10 +117,15 @@ export default function ServicesSummary() {
           <div className="services-grid">
             {expoServices.map((service, idx) => (
               <article
-                key={idx}
-                className="service-card"
-                style={{ '--svc-bg': service.bg }}
-              >
+  key={idx}
+  className="service-card"
+  style={{
+    '--svc-bg': service.bg,
+    cursor: 'pointer'
+  }}
+  onClick={() => navigate('/contact')}
+>
+              
                 <div
                   className="service-card-img"
                   role="img"

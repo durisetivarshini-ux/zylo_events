@@ -3340,3 +3340,25 @@ input, textarea, select { font-family: inherit; }
 .blog-card-content {
   padding: 24px;
 }
+.planning-cta {
+  display: inline-block;
+  margin-top: 10px;
+  color: #BAE6FD;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.planning-card:hover .planning-cta {
+  transform: translateX(4px);
+}
+.planning-cta {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+}
+
+.planning-card:hover .planning-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
