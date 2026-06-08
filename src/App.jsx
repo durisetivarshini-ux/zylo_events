@@ -6,7 +6,6 @@ import Footer from './components/layout/Footer';
 import ScrollToTop from './components/shared/ScrollToTop';
 import CallbackTab from './components/shared/CallbackTab';
 import WhatsappBtn from './components/shared/WhatsappBtn';
-import useScrollReveal from './hooks/useScrollReveal';
 import clsx from 'clsx';
 
 // Import CSS variables, animations, and global sets
@@ -20,7 +19,7 @@ import './styles/global.css';
  */
 export default function App() {
   // Activate scroll entry animation reveal hooks
-  useScrollReveal();
+  
 
   const [backToTopVisible, setBackToTopVisible] = useState(false);
 

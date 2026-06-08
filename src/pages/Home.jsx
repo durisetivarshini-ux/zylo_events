@@ -49,7 +49,7 @@ export default function Home() {
               id="process-title"
             />
 
-            <div className="process-grid reveal">
+            <div className="process-grid">
               {/* Step 1: Strategic Consulting */}
               <div className="process-card">
                 <div className="process-card-header">
@@ -129,7 +129,7 @@ export default function Home() {
               id="gallery-title"
             />
 
-            <div className="gallery-grid reveal">
+            <div className="gallery-grid">
               <div
                 className="gallery-item gi-tall"
                 style={{
@@ -186,7 +186,7 @@ export default function Home() {
               ></div>
             </div>
 
-            <div className="gallery-cta reveal" style={{ textAlign: 'center', marginTop: '40px' }}>
+            <div className="gallery-cta" style={{ textAlign: 'center', marginTop: '40px' }}>
               <Button to="/gallery" variant="gold-outline">
                 View Full Gallery →
               </Button>
