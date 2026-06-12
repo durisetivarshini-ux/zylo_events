@@ -3531,3 +3531,76 @@ input, textarea, select { font-family: inherit; }
   transform: none !important;
   visibility: visible !important;
 }
+
+/* Height responsive overrides to prevent hero elements cutoff and scroll overlapping */
+@media (max-height: 900px) {
+  .hero-content {
+    padding-top: 60px !important;
+    padding-bottom: 30px !important;
+  }
+  .hero-badge {
+    margin-bottom: 12px !important;
+  }
+  .hero-title {
+    margin-bottom: 12px !important;
+    font-size: clamp(1.8rem, 4vw, 3rem) !important;
+  }
+  .hero-subtitle {
+    margin-bottom: 20px !important;
+  }
+  .hero-ctas {
+    margin-bottom: 20px !important;
+  }
+  .hero-stats {
+    padding: 12px 20px !important;
+  }
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+}
+
+@media (max-height: 768px) {
+  .hero-content {
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+  }
+  .hero-badge {
+    margin-bottom: 8px !important;
+    padding: 4px 12px !important;
+    font-size: 0.7rem !important;
+  }
+  .hero-title {
+    margin-bottom: 8px !important;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
+  }
+  .hero-title span {
+    font-size: 1.2em !important;
+  }
+  .hero-subtitle {
+    margin-bottom: 16px !important;
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+  }
+  .hero-ctas {
+    margin-bottom: 16px !important;
+  }
+  .hero-ctas .btn {
+    padding: 10px 20px !important;
+    font-size: 0.85rem !important;
+  }
+  .hero-stats {
+    padding: 8px 16px !important;
+  }
+  .stat {
+    padding: 0 16px !important;
+  }
+  .stat strong {
+    font-size: 1.3rem !important;
+  }
+  .stat span {
+    font-size: 0.65rem !important;
+  }
+  .stat-divider {
+    height: 24px !important;
+  }
+}
