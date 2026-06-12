@@ -103,12 +103,12 @@ export default function PlanningExpertise() {
             <article
               key={idx}
               className="planning-card reveal"
-              style={{
-                '--card-bg': `linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%), url('${card.bg}')`,
-                cursor: 'pointer'
-              }}
               onClick={() => navigate('/contact')}
             >
+              <div 
+                className="planning-card-bg" 
+                style={{ backgroundImage: `url('${card.bg}')` }}
+              ></div>
               <div className="planning-card-overlay"></div>
 
               <div className="planning-card-icon">

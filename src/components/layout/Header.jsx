@@ -31,7 +31,7 @@ export default function Header() {
               </svg>
             </a>
             <a href="#" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -54,7 +54,7 @@ export default function Header() {
             </a>
             <span className="divider">|</span>
             <a href="mailto:hello@zyloevents.com">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
@@ -69,17 +69,17 @@ export default function Header() {
         <div className="container nav-inner">
           {/* Logo vector box */}
           <Link to="/" className="nav-logo animate-fade-in" aria-label="Zylo Events Home" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none' }}>
-            <svg width="120" height="42" viewBox="0 0 160 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ overflow: 'visible' }}>
+            <svg width="185" height="60" viewBox="0 0 160 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ overflow: 'visible' }}>
               <rect x="0" y="4" width="44" height="44" rx="6" fill="#3B82F6" />
               <rect x="8" y="10" width="28" height="7" rx="1" fill="#ffffff" />
               <rect x="8" y="35" width="28" height="7" rx="1" fill="#ffffff" />
-              <line x1="34" y1="11" x2="10" y2="41" stroke="#14B8A6" stroke-width="4.5" stroke-linecap="round" />
-              <line x1="30" y1="8" x2="14" y2="44" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" opacity="0.4" />
-              <text x="54" y="34" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" letter-spacing="5" fill="#0F172A" className="header-logo-text">ZYLO</text>
+              <line x1="34" y1="11" x2="10" y2="41" stroke="#14B8A6" strokeWidth="4.5" strokeLinecap="round" />
+              <line x1="30" y1="8" x2="14" y2="44" stroke="#14B8A6" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
+              <text x="54" y="34" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="24" letterSpacing="5" fill="#0F172A" className="header-logo-text">ZYLO</text>
             </svg>
-            <div className="brand-badge-wrapper" style={{ display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(15, 23, 42, 0.15)', paddingLeft: '14px', lineHeight: '1.2' }}>
-              <span style={{ fontSize: '0.62rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Corporate Wing of</span>
-              <span style={{ fontSize: '0.8rem', letterSpacing: '0.08em', color: 'var(--brand, #3B82F6)', fontWeight: '800', textTransform: 'uppercase' }}>Alankaran</span>
+            <div className="brand-badge-wrapper" style={{ display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(15, 23, 42, 0.15)', paddingLeft: '18px', lineHeight: '1.25' }}>
+              <span style={{ fontSize: '0.8rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Corporate Wing of</span>
+              <span style={{ fontSize: '1.05rem', letterSpacing: '0.08em', color: 'var(--brand, #3B82F6)', fontWeight: '800', textTransform: 'uppercase' }}>Alankaran</span>
             </div>
           </Link>
 

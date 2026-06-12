@@ -17,8 +17,8 @@ export default function Footer() {
                 <rect x="0" y="4" width="44" height="44" rx="6" fill="#3B82F6" />
                 <rect x="8" y="10" width="28" height="7" rx="1" fill="#ffffff" />
                 <rect x="8" y="35" width="28" height="7" rx="1" fill="#ffffff" />
-                <line x1="34" y1="11" x2="10" y2="41" stroke="#14B8A6" stroke-width="4.5" stroke-linecap="round" />
-                <text x="54" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="5" fill="#ffffff">ZYLO</text>
+                <line x1="34" y1="11" x2="10" y2="41" stroke="#14B8A6" strokeWidth="4.5" strokeLinecap="round" />
+                <text x="54" y="32" fontFamily="'Plus Jakarta Sans', sans-serif" fontWeight="800" fontSize="22" letterSpacing="5" fill="#ffffff">ZYLO</text>
               </svg>
             </Link>
             <p style={{ marginTop: '16px' }}>
@@ -43,7 +43,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a href="#" aria-label="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -94,7 +94,7 @@ export default function Footer() {
             <h4 className="footer-col-title">Contact Us</h4>
             <ul className="footer-contact-list">
               <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
@@ -107,7 +107,7 @@ export default function Footer() {
                 <a href="tel:+919876543210">+91 98765 43210</a>
               </li>
               <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>

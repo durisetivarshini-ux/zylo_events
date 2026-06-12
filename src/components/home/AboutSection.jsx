@@ -7,7 +7,7 @@ export default function AboutSection() {
       <div className="container about-grid">
         <div className="about-content reveal">
           <span className="section-tag">About Zylo</span>
-          <h2 id="about-title" class="section-title">
+          <h2 id="about-title" className="section-title">
             From Boardrooms to Grand Exhibitions,{' '}
             <span style={{ color: 'var(--brand)' }}>We've Got You Covered</span>
           </h2>
@@ -21,10 +21,6 @@ export default function AboutSection() {
             <div className="pillar">
               <span className="pillar-icon">✦</span>
               <span>Pan-India Coverage</span>
-            </div>
-            <div className="pillar">
-              <span className="pillar-icon">✦</span>
-              <span>ISO 9001 Certified</span>
             </div>
             <div className="pillar">
               <span className="pillar-icon">✦</span>

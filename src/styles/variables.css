@@ -59,7 +59,7 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Layout */
-  --nav-height:        68px;
+  --nav-height:        80px;
   --top-strip-height:  36px;
   --announce-height:   40px;
 }
